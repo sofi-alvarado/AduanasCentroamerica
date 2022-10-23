@@ -8,7 +8,7 @@ const { aduanaGTGet,
 const router = Router();
 
 
-router.get('/aduanas', aduanaGTGet);
+router.get('/api/aduanas', aduanaGTGet);
 router.post('/GT', aduanaGTPost);
 router.post('/CR', aduanaCRPost);
 
