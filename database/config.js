@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const dbConnection = async() =>{
     try {
         
@@ -10,7 +9,7 @@ const dbConnection = async() =>{
         console.log('La base de datos esta ONLINE');
     } catch (error) {
         console.log(error);
-        //throw new Error('Error en la base de datos !!!!!!  verifique......')
+        throw new Error('Error en la base de datos !!!!!!  verifique......')
 
     }
 
