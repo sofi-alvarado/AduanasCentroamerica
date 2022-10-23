@@ -23,6 +23,10 @@ const AduanaSchema=Schema({
     }
 });
 
+AduanaSchema.methods.toJSON = function() {
+  const {__v,...aduana} = this.toObject();
+  return aduana;
+}
 
 module.exports = model( 'Aduana', AduanaSchema);
 

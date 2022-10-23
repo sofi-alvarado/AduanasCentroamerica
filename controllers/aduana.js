@@ -6,7 +6,7 @@ const aduanaGTGet = async(req = request, res = response) => {
 
     const { limite = 10, desde = 0 } = req.query;
 
-    const [ aduanas ] = await Promise.all([
+    const [ total, aduanas ] = await Promise.all([
         Aduana.countDocuments(),
         Aduana.find()
             .skip( Number(desde) )
@@ -15,6 +15,7 @@ const aduanaGTGet = async(req = request, res = response) => {
 
     res.json({
         estudiante: "Sofia Michelle, Alvarado Henriquez 25-3152-2017",
+        total,
         aduanas
     }); 
 }
@@ -27,6 +28,7 @@ const aduanaGTPost = async(req, res = response) => {
     await aduanas.save();
 
     res.json({
+        msg:'Metodo POST para Guatemala',
         aduanas,
     });
 }
@@ -38,6 +40,7 @@ const aduanaCRPost = async(req, res = response) => {
     await aduanas.save();
 
     res.json({
+        msg:'Metodo POST para Costa Rica',
         aduanas,
     });
 }
